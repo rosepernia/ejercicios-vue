@@ -1,17 +1,18 @@
 <template>
  <div>
-  <h2>Validar DNI</h2> 
-  <EjercicioDni/>
+  <h2>PruebaVue 2</h2> 
+  <Reactividad inc="2"/>
+  <Reactividad inc="5"/>
+  <Reactividad inc="7"/>
  </div>
 </template>
 
 <script>
-import EjercicioDni from '@/components/EjercicioDni.vue'
+import Reactividad from '@/components/Reactividad.vue'
 
 export default {
-   name:'Ejemplo1',
    components: {
-       EjercicioDni
+       Reactividad
    }
 }
 </script>
