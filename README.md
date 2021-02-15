@@ -1,4 +1,4 @@
-# Ejemplos hechos con Vue.js que incluye componentes de login, input, y tabla con sumatorio.
+#Vue.js: componentes de login, input, y tabla con sumatorio.
 
 ## Project setup
 ```
