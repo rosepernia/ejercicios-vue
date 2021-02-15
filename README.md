@@ -1,4 +1,4 @@
-# ejercicio
+# Ejemplos hechos con Vue.js que incluye componentes de login, input, y tabla con sumatorio.
 
 ## Project setup
 ```
