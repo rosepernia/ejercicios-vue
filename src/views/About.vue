@@ -1,7 +1,8 @@
 <template>
   <div class="about">
-   <h1>Ejercicio DNI</h1>
-    <EjercicioDni  etiqueta="Holiii" />
+   <h1>Comprobar NIF</h1>
+    <xInput  etiqueta="NIF" exp="(/[a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9]/)"/>
+
 
     <!-- <p><pre>&lt;xInput label='NIF:'mask='^\d{8}[a-zA-Z]{1}$'&gt;</pre></p> -->
     <!-- <xInput label='NIF:' mask='^\d{8}[a-zA-Z]{1}$'/> -->
@@ -9,11 +10,11 @@
 </template>
 
 <script>
-import EjercicioDni from '@/components/EjercicioDni.vue'
+import xInput from '@/components/xInput.vue'
 
 export default {
    components: {
-       EjercicioDni
+       xInput
    }
 }
 </script>
