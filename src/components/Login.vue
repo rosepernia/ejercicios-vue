@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import xInput from "@/components/xInput.vue";
+import { ref } from "vue"
+import xInput from "@/components/xInput.vue"
 
 export default {
   name: "Login",

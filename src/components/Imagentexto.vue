@@ -44,8 +44,8 @@ button{
 
   background: rgb(175, 113, 199);
   border-radius: 6px;
-  width: 120px;
-  height: 40px;
+  width: 150px;
+  height: 60px;
   cursor: pointer;
   color:white;
 }

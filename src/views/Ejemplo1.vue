@@ -1,6 +1,6 @@
 <template>
  <div>
-  <h2>PruebaVue 2</h2> 
+  <h2>Contador</h2> 
   <Reactividad inc="2"/>
   <Reactividad inc="5"/>
   <Reactividad inc="7"/>
