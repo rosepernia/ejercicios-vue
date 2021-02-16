@@ -1,4 +1,4 @@
-# ejercicio
+#Vue.js: componentes de login, input, y tabla con sumatorio.
 
 ## Project setup
 ```
