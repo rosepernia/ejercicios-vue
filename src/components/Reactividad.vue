@@ -33,7 +33,7 @@ export default {
       }
 
        const restar=()=>{
-         contador.value-=incremento
+         contador.valor-=incremento
          console.log(contador)
       }
 
@@ -50,5 +50,14 @@ export default {
   .reactividad{
     border:1px dashed black;
   }
+
+button {
+  margin-top:20px;
+  border: 1px solid black;
+  background: #b4cedd;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 80px;
+}
  
  </style>

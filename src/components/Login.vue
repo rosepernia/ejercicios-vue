@@ -34,9 +34,7 @@ export default {
     const registro = () => {
       nombreUsuario.value=x1.lastChild.value
       login.value = false
-      /* if (nombreUsuario.value == "pepe" && password.value == "1234") {
-        login.value = false
-      }  */
+ 
     }
 
     const salir = () => {

@@ -21,11 +21,11 @@ export default {
   },
 
   setup(props) {
-    /* let textoDni=ref("") */
+  
     let etiquetaActual = ref(props.etiqueta)
     let clases = ref("rojo")
     
-    //let expresion = /([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])/
+
     let expresion = new RegExp(props.exp)
 
     const comprobar = (e)=>{
@@ -35,19 +35,8 @@ export default {
        else{
           clases.value="rojo"
        } 
-      console.log(e.target.value)
     }
 
-    /* const probarDni = (e) => {
-      if (expresion.test(e.target.value)) {
-        clases.value = "verde"
-      }
-       else{
-          clases.value="rojo"
-       } 
-      console.log(e.target.value)
-     
-    } */
 
     return {
       etiquetaActual,
