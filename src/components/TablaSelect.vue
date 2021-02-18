@@ -3,25 +3,20 @@
 <div class="centrado">
   <div class="fondo">
     <h4>PROVINCIAS</h4>
-    <select v-model="provincia">
-    <option disabled value="">Seleccione una provincia</option>
-    <option v-for="(provincia,i) in provincias" :key="i"></option>
+    <select v-model="provincia" @change="verMunicipios">
+      <option disabled value="">Selecciona una provincia</option>
+      <option  v-for="(item,i) in provincias" :key="i" :value="item.id">{{item.nm}}</option>
     </select>
-    <p><span>Provincia seleccionada: {{provincia}}</span></p>
-    
+
     <h4>MUNICIPIOS</h4>
-    <select v-model="provincia">
+    <select v-model="municipio" @change="verInformacion">
     <option disabled value="">Seleccione un municipio</option>
-    <!-- <option v-for="(item,i) in datos" :key="i"></option> -->
+    <option v-for="(muni,i) in municipios" :key="i" :value="muni.COD_GEO">{{muni.NOMBRE}}</option>
     </select>
-    <p><span>Municipio seleccionado: <!-- {{seleccionado}} --></span></p>
-  
   </div> 
 </div>
 </template>
   
-    
-
 <script>
 import { ref, reactive } from "vue";
 export default {
@@ -29,31 +24,50 @@ export default {
   props: {},
   setup() {
        
-       let provincia=ref("")
+       let provincia=ref("") 
        let provincias=reactive([])
-     
-       /* const leerDatos =()=>{
-       let datos='https://github.com/IagoLast/pselect/blob/master/data/municipios.json'
-      
-        this.$http.get(datos).then(function(response){
-        this.provincias = response.data
-        console.log(data)
-    })
-       } */
+       let municipios=reactive([])
+       let municipio=ref("")
+       let informacion=reactive([])
        
-        fetch('https://github.com/IagoLast/pselect/blob/master/data/provincias.json')
+      fetch('https://raw.githubusercontent.com/IagoLast/pselect/master/data/provincias.json')
          .then(response => response.json())
-         .then(data => 
-           data.forEach(element => {
+         .then(data =>{
+              data.forEach(element => {
               provincias.push(element)
-              }))
-            
-              
+          })  
+      })
 
- 
+         
+      const verMunicipios=()=>{
+          fetch('https://www.el-tiempo.net/api/json/v2/provincias/' + provincia.value + '/municipios')
+            .then(response => response.json())
+            .then(datos =>{
+               municipios.splice(0)
+               datos.municipios.forEach(element => {
+                 console.log(datos.municipios)
+                 municipios.push(element)
+                })  
+            })
+      }
+      const verInformacion=()=>{
+          fetch('https://www.el-tiempo.net/api/json/v2/provincias/' + provincia.value + '/municipios/' + municipio.value)
+            .then(response => response.json())
+            .then(datos =>{
+              console.log(datos)
+            })   
+      } 
+    
+    
+    
     return {
       provincias,
-      provincia,
+      provincia, 
+      municipios,
+      verMunicipios,
+      municipio,
+      verInformacion,
+      informacion
     }
   },
 }
@@ -72,6 +86,9 @@ export default {
   padding: 60px;
   margin: 10px;
   text-align: center;
+}
+span{
+  background: rgb(172, 236, 172);
 }
 
 </style>

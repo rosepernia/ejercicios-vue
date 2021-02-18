@@ -5,7 +5,8 @@
     <router-link to="/ejemplo1">Ejemplo1</router-link> |
     <router-link to="/ejemplo3">Ejemplo3</router-link> |
     <router-link to="/ejemplo4">Ejemplo4</router-link> |
-    <router-link to="/ejemplo5">Ejemplo5</router-link>
+    <router-link to="/ejemplo5">Ejemplo5</router-link> |
+    <router-link to="/ejemplo6">Ejemplo6</router-link>
   </div>
   <router-view/>
 </template>
