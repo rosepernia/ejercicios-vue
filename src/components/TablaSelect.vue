@@ -13,12 +13,14 @@
     <option disabled value="">Seleccione un municipio</option>
     <option v-for="(muni,i) in municipios" :key="i" :value="muni.COD_GEO">{{muni.NOMBRE}}</option>
     </select>
+
+
   </div> 
 </div>
 </template>
   
 <script>
-import { ref, reactive } from "vue";
+import { ref, reactive, watch } from "vue";
 export default {
   name: "TablaSelect",
   props: {},
@@ -45,19 +47,31 @@ export default {
             .then(datos =>{
                municipios.splice(0)
                datos.municipios.forEach(element => {
-                 console.log(datos.municipios)
+                 /* console.log(datos.municipios) */
                  municipios.push(element)
                 })  
             })
       }
+
+     watch(municipio, ()=>{
+       console.log(municipio)
+       let filtro=municipios.filter(coincidencia=>{
+          keyword=municipio.value
+          let regex = new RegExp(keyword, 'gi')
+          coincidencia.municipio.match(regex)
+          console.log(filtro)
+       })
+     })
+
       const verInformacion=()=>{
           fetch('https://www.el-tiempo.net/api/json/v2/provincias/' + provincia.value + '/municipios/' + municipio.value)
             .then(response => response.json())
             .then(datos =>{
-              console.log(datos)
+              /* console.log(datos) */
             })   
       } 
-    
+
+
     
     
     return {
