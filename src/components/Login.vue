@@ -1,4 +1,5 @@
 <template>
+
 <div class="centrado">
   <div v-if="login" class="fondo">
     <label>Usuario:</label>

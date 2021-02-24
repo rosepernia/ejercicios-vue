@@ -47,6 +47,7 @@ export default {
     } 
     
     onMounted(()=>calculoTotal()) 
+    
     return {
      datos,
      subtotal,
