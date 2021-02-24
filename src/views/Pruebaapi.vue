@@ -1,6 +1,5 @@
 <template>
   <div>
-   <h1>Creando un Api</h1>
     <Api/>
   </div>
 </template>
@@ -13,3 +12,4 @@ export default {
    }
 }
 </script>
+
