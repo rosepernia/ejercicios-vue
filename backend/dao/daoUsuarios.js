@@ -14,4 +14,10 @@ daoUsuarios.guardar = function guardar(usuario) {
     })
 }
 
+daoUsuarios.listar=function listar(){
+    return new Promise((resolved, reject) => {
+        resolved(Usuario.find().lean())
+    })
+}
+
 module.exports = daoUsuarios
