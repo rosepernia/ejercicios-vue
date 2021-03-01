@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const conexion = require('./conexion')
 const rtApi=require('./routers/rtApi')
+const rtIdiomas=require('./routers/rtIdiomas')
 
 //Middlewares
 app.use(express.urlencoded({extended:true}))
@@ -9,6 +10,7 @@ app.use(express.json())
 
 //enrutadores
 app.use('/api',rtApi)
+app.use('/idiomas',rtIdiomas)
 
 //mongoDB
 conexion.on('error',console.error.bind(console,'Error al conectar a mongo'))

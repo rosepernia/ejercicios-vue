@@ -7,6 +7,9 @@ import Ejemplo5 from '../views/Ejemplo5.vue'
 import Ejemplo6 from '../views/Ejemplo6.vue'
 import Carrito from '../views/Carrito.vue'
 import Pruebaapi from '../views/Pruebaapi.vue'
+import Multiidiomas from '../views/Multiidiomas.vue'
+import Storage from '../views/Storage.vue'
+import Admin from '../views/Admin.vue'
 
 const routes = [
   {
@@ -54,7 +57,23 @@ const routes = [
     path: '/pruebaapi',
     name: 'Pruebaapi', 
     component: Pruebaapi
+  },
+  {
+    path: '/multiidiomas',
+    name: 'Multiidiomas', 
+    component: Multiidiomas
+  },
+  {
+    path: '/storage',
+    name: 'Storage', 
+    component: Storage
+  },
+  {
+    path: '/admin',
+    name: 'Admin', 
+    component: Admin
   }
+
 ]
 
 const router = createRouter({
