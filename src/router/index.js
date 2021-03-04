@@ -11,6 +11,7 @@ import Multiidiomas from '../views/Multiidiomas.vue'
 import Storage from '../views/Storage.vue'
 import Admin from '../views/Admin.vue'
 
+
 const routes = [
   {
     path: '/',

@@ -22,6 +22,14 @@ const schemaUsuario = new Schema({
         type: String,
        /*  required: [true, 'El nombre es necesario'] */
     },
+    password: {
+        type: String,
+       /*  required: [true, 'El nombre es necesario'] */
+    },
+    telefono: {
+        type: String,
+       /*  required: [true, 'El nombre es necesario'] */
+    },
      /* telefonos: [{fijo:String, movil:String}]  */
    /*  telefono: [{
         type: mongoose.Schema.ObjectId,

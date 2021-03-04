@@ -1,7 +1,7 @@
 <template>
 <div class="container ">
- <div class="row justify-content-center">
-   <div class="col-8 col-md-6">
+<!--  <div class="row justify-content-center">
+   <div class="col-8 col-md-6"> -->
       <h2>Carrito &#128722;</h2> 
       <ul>
         <li v-for="(item,indice) in articulos" :key="indice">
@@ -18,13 +18,14 @@
         <span >IMPORTE TOTAL: {{totalCarrito}} €</span>
       </p>
     </div>
-  </div>
-</div> 
+<!--   </div>
+</div>  -->
 </template>
 
 <script>
 import Item from '@/components/Item.vue'
 import { ref} from "vue"
+import { useStore } from "vuex"
 export default {
  name:'Carrito',
  components: {
@@ -32,8 +33,8 @@ export default {
    },
 
  setup() {
-
-   let totalCarrito=ref(0)
+   const store= useStore()
+   let totalCarrito=ref(0) 
     
     const articulos=[      
          {nombre:'SUDADERA',descripcion:'Sudadera texto gris',imagen:'./images/carr-1.png',precio: 2.20},      
@@ -47,11 +48,14 @@ export default {
       totalCarrito.value+=parseFloat(subtotal.value)
       console.log("esto es el total: ", totalCarrito.value) 
     } 
+
+     /* let totalCarrito=
+     store.commit('setTotal',total) */
     
 
     return {
       articulos,
-      totalCarrito,
+      totalCarrito, 
       precioTotal
       
     }

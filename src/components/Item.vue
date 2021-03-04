@@ -1,13 +1,14 @@
 <template>
 
  <div class="row">
-   <div class="col-4">
+<!--    <div class="col-4">
       <img class="foto" :src="imagen">
-   </div>
+   </div> -->
    <div clas="col-8">
+     <img class="foto" :src="imagen">
        <p v-html="titulo" class="nombre"></p>
        <p v-text="descripcion"></p>
-       <p v-text="precio"></p>€
+       <p >Precio:<span v-text="precio"></span>€</p>
        Unidades:<input v-model="unidades" type="number" class="num">
        <p>Subtotal: <span v-text="subtotal"></span>€</p>
        <hr>
@@ -67,6 +68,10 @@ button {
   background: transparent;
   border-radius: 6px;
   cursor: pointer;
+}
+
+span{
+  background: transparent;
 }
 
 .avatar{

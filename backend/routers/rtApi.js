@@ -36,11 +36,31 @@ rtApi.post('/nuevo', (req, res) => {
         })
 })
 
-rtApi.get('/listar', async (req, res) => {
+/* rtApi.get('/listar', async (req, res) => {
     let listaUsuarios = await daoUsuarios.listar()
     res.json({
         mensaje:"Estos son tus usuarios", 
         datos:listaUsuarios
+    })
+}) */
+
+rtApi.get('/listar', (req, res) =>{
+    daoUsuarios.listar()
+    .then(usuarios=>{
+        res.json(usuarios)
+    })
+})
+
+rtApi.post('/eliminar', (req, res)=>{
+    daoUsuarios.eliminar(req.body.id)
+    res.json({respuesta:'ok'})
+})
+
+rtApi.post('/login', (req, res)=>{
+    daoUsuarios.login(req.body.email,req.body.password)
+    .then(data=>{
+        res.json(data)
+        console.log("login realizado con éxito")
     })
 })
 

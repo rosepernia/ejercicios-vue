@@ -1,7 +1,5 @@
 <template>
   <div>
-
-    <Store/>
     <Store/>
   </div>
 </template>
