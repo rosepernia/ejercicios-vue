@@ -7,7 +7,7 @@
     <label>Password:</label>
     <input v-model="password" placeholder="password"/><br>
     <button @click="registro">Login</button>
-    <div>{{user}}</div>
+    <div>{{usuario}}</div>
   </div> 
 
   <!-- </div> -->
@@ -31,7 +31,7 @@ export default {
     const store= useStore()
     let email=ref("")
     let password=ref("")
-    let user=computed(()=>{
+    let usuario=computed(()=>{
       return store.getters.getUser
     })
 
@@ -56,7 +56,7 @@ export default {
       email,
       password,
       registro,
-      user
+      usuario
       
     }
   },
