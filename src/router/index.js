@@ -10,6 +10,7 @@ import Pruebaapi from '../views/Pruebaapi.vue'
 import Multiidiomas from '../views/Multiidiomas.vue'
 import Storage from '../views/Storage.vue'
 import Admin from '../views/Admin.vue'
+import TinyMCE from '../views/TinyMCE.vue'
 
 
 const routes = [
@@ -73,6 +74,11 @@ const routes = [
     path: '/admin',
     name: 'Admin', 
     component: Admin
+  },
+  {
+    path: '/tinyMCE',
+    name: 'TinyMCE', 
+    component: TinyMCE
   }
 
 ]

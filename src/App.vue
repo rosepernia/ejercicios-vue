@@ -12,7 +12,8 @@
     <router-link to="/pruebaapi">Pruebaapi</router-link> |
     <router-link to="/multiidiomas">Multiidiomas</router-link> |
     <router-link to="/storage">Storage</router-link>|
-    <router-link to="/admin">Admin</router-link>
+    <router-link to="/admin">Admin</router-link>|
+    <router-link to="/tinyMCE">TinyMCE</router-link>
    
   </div>
   <router-view/>
